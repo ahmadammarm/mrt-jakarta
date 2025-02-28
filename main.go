@@ -1,10 +1,20 @@
 package main
 
 import (
-    "github.com/gin-gonic/gin"
+	"github.com/ahmadammarm/mrt-jakarta/internal/routers"
+	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func InitiateRouter() {
     router := gin.Default()
+    api := router.Group("/v1/api")
+
+
+    routers.Routers(api)
     router.Run(":8080")
+
+}
+
+func main() {
+
 }
