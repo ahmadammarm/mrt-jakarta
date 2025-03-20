@@ -1,20 +1,19 @@
 package main
 
 import (
-	"github.com/ahmadammarm/mrt-jakarta/internal/routers"
+	"github.com/ahmadammarm/mrt-jakarta/station"
 	"github.com/gin-gonic/gin"
 )
 
 func InitiateRouter() {
-    router := gin.Default()
-    api := router.Group("/v1/api")
+	var (
+		router = gin.Default()
+		api    = router.Group("/api")
+	)
 
-
-    routers.Routers(api)
-    router.Run(":8080")
-
+	station.Initiate(api)
 }
 
 func main() {
-
+	InitiateRouter()
 }

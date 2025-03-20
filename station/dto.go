@@ -1,11 +1,13 @@
 package station
 
+
 type Station struct {
-    ID   int    `json:"nid"`
+    ID string `json:"nid"`
     Name string `json:"title"`
 }
 
 type StationResponse struct {
-    ID   int    `json:"id"`
+    Id string `json:"id"`
     Name string `json:"name"`
 }
+
