@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ahmadammarm/mrt-jakarta/station"
+	"github.com/ahmadammarm/mrt-jakarta/internal/station"
 	"github.com/gin-gonic/gin"
 )
 
