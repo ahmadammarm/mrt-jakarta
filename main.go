@@ -12,6 +12,9 @@ func InitiateRouter() {
 	)
 
 	station.Initiate(api)
+
+    router.Run(":8080")
+
 }
 
 func main() {
