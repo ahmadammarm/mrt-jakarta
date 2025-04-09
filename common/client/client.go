@@ -2,11 +2,11 @@ package client
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
-func Request(client *http.Client, url string) ([]byte, error) {
+func ClientRequest(client *http.Client, url string) ([]byte, error) {
     response, err := client.Get(url)
 
     if err != nil {
@@ -18,11 +18,11 @@ func Request(client *http.Client, url string) ([]byte, error) {
     if response.StatusCode != http.StatusOK {
         return nil, fmt.Errorf("error: %s", response.Status)
     }
-    body, err := ioutil.ReadAll(response.Body)
+    body, err := io.ReadAll(response.Body)
 
     if err != nil {
         return nil, err
     }
-    
+
     return body, nil
 }

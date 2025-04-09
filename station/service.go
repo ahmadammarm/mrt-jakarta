@@ -22,7 +22,7 @@ func (service *stationService) GetAllStations() (response []StationResponse, err
     url := "https://www.jakartamrt.co.id/id/val/stasiuns"
 
     // hit url
-    byteResponse, err := client.Request(service.client, url)
+    byteResponse, err := client.ClientRequest(service.client, url)
 
     if err != nil {
         return
@@ -38,7 +38,7 @@ func (service *stationService) GetAllStations() (response []StationResponse, err
             Name: station.Name,
         })
     }
-    
+
     return
 }
 
