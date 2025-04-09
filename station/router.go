@@ -11,7 +11,7 @@ func Initiate(router *gin.RouterGroup) {
 
 	stationService := NewService()
 
-	station := router.Group("/station")
+	station := router.Group("/stations")
 	station.GET("/", func(context *gin.Context) {
 		GetAllStations(context, stationService)
 	})
@@ -31,7 +31,7 @@ func GetAllStations(context *gin.Context, service StationService) {
 
 	context.JSON(http.StatusOK, response.APIResponse{
         Code:    http.StatusOK,
-        Message: "success get all stations",
+        Message: "Success get all stations",
         Data:    datas,
         Success: true,
     })
